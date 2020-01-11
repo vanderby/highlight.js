@@ -1,0 +1,4 @@
+customEvents
+| where name startswith "Download"
+| make-series count() default=0 on timestamp in range(ago(30d), now(), 12h)
+| render timechart
