@@ -9,26 +9,17 @@ Category: common
 function(hljs) {
   return {
     aliases: ['kusto', 'kql'],
-    keywords:
-        // Tabular operators 
-        'as consume count datatable distinct evaluate extend externaldata facet find fork getschema invoke join limit lookup' +
-        'make-series mv-apply mv-expand order project project-away project-rename operator project-reorder parse partition print' +
-        'range reduce render sample sample-distinct search serialize sort summarize take top top-nested top-hitters union where',
     case_insensitive: true,
     illegal: /[<>{}*]/,
     contains: [
       {
-        beginKeywords:
-          'TODO',
-        end: /;/, endsWithParent: true,
-        keywords: {
-          keyword:
-            'TODO',
-          literal:
-            'TODO',
-          built_in:
-            'TODO'
-        },
+        className: 'keyword',
+        begin: '|',
+        keywords:
+        // Tabular operators 
+        'as consume count datatable distinct evaluate extend externaldata facet find fork getschema invoke join limit lookup' +
+        'make-series mv-apply mv-expand order project project-away project-rename operator project-reorder parse partition print' +
+        'range reduce render sample sample-distinct search serialize sort summarize take top top-nested top-hitters union where',
         contains: [
           {
             className: 'string',
